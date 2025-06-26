@@ -19,7 +19,7 @@
         }
         
         .dashboard-container {
-            max-width: 1200px;
+            max-width: 1400px;
             margin: 0 auto;
             background: white;
             min-height: 100vh;
@@ -36,27 +36,72 @@
         }
         
         .header-content {
-            max-width: 1200px;
+            max-width: 1400px;
             margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
         }
         
-        .header h1 {
+        .header-info h1 {
             font-size: 1.875rem;
             font-weight: 700;
             margin-bottom: 0.5rem;
             letter-spacing: -0.025em;
         }
         
-        .header p {
+        .header-info p {
             font-size: 1rem;
             opacity: 0.8;
             font-weight: 400;
         }
         
+        .header-controls {
+            display: flex;
+            gap: 1rem;
+            align-items: center;
+        }
+        
+        .nav-tabs {
+            display: flex;
+            gap: 0.5rem;
+        }
+        
+        .nav-tab {
+            padding: 0.5rem 1rem;
+            background: rgba(255,255,255,0.1);
+            border: 1px solid rgba(255,255,255,0.2);
+            border-radius: 0.5rem;
+            color: white;
+            text-decoration: none;
+            font-size: 0.875rem;
+            font-weight: 500;
+            transition: all 0.2s;
+            cursor: pointer;
+        }
+        
+        .nav-tab:hover {
+            background: rgba(255,255,255,0.2);
+        }
+        
+        .nav-tab.active {
+            background: white;
+            color: #1e293b;
+        }
+        
         .main-content {
             padding: 2rem 1.5rem;
-            max-width: 1200px;
+            max-width: 1400px;
             margin: 0 auto;
+        }
+        
+        .tab-content {
+            display: none;
+        }
+        
+        .tab-content.active {
+            display: block;
         }
         
         .student-info {
@@ -98,6 +143,100 @@
             font-size: 1rem;
             font-weight: 500;
             color: #1f2937;
+        }
+        
+        .decision-matrix {
+            background: white;
+            border: 1px solid #e2e8f0;
+            border-radius: 0.75rem;
+            margin-bottom: 2rem;
+            overflow: hidden;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+        }
+        
+        .section-header {
+            background: #f8fafc;
+            border-bottom: 1px solid #e2e8f0;
+            padding: 1.25rem 1.5rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .section-title {
+            font-size: 1.125rem;
+            font-weight: 600;
+            color: #1f2937;
+        }
+        
+        .recommendation {
+            background: #059669;
+            color: white;
+            padding: 0.5rem 1rem;
+            border-radius: 0.5rem;
+            font-size: 0.875rem;
+            font-weight: 600;
+        }
+        
+        .section-content {
+            padding: 1.5rem;
+        }
+        
+        .criteria-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1rem;
+            margin-bottom: 2rem;
+        }
+        
+        .criteria-item {
+            background: #f8fafc;
+            border: 1px solid #e2e8f0;
+            border-radius: 0.5rem;
+            padding: 1rem;
+        }
+        
+        .criteria-label {
+            font-size: 0.875rem;
+            font-weight: 600;
+            color: #374151;
+            margin-bottom: 0.5rem;
+        }
+        
+        .weight-slider {
+            width: 100%;
+            margin-bottom: 0.5rem;
+        }
+        
+        .weight-value {
+            font-size: 0.8125rem;
+            color: #6b7280;
+        }
+        
+        .scores-table {
+            width: 100%;
+            border-collapse: collapse;
+            font-size: 0.875rem;
+            margin-top: 1rem;
+        }
+        
+        .scores-table th {
+            background: #f8fafc;
+            color: #374151;
+            font-weight: 600;
+            padding: 0.75rem;
+            text-align: left;
+            border-bottom: 1px solid #e2e8f0;
+        }
+        
+        .scores-table td {
+            padding: 0.75rem;
+            border-bottom: 1px solid #f1f5f9;
+        }
+        
+        .score-cell {
+            text-align: center;
+            font-weight: 600;
         }
         
         .options-grid {
@@ -226,7 +365,7 @@
             line-height: 1.5;
         }
         
-        .monthly-analysis {
+        .payment-schedule {
             background: white;
             border: 1px solid #e2e8f0;
             border-radius: 0.75rem;
@@ -235,82 +374,63 @@
             box-shadow: 0 1px 3px rgba(0,0,0,0.1);
         }
         
-        .section-header {
+        .schedule-controls {
+            padding: 1rem 1.5rem;
             background: #f8fafc;
             border-bottom: 1px solid #e2e8f0;
-            padding: 1.25rem 1.5rem;
-        }
-        
-        .section-title {
-            font-size: 1.125rem;
-            font-weight: 600;
-            color: #1f2937;
-        }
-        
-        .section-content {
-            padding: 1.5rem;
-        }
-        
-        .monthly-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            display: flex;
             gap: 1rem;
+            align-items: center;
+            flex-wrap: wrap;
         }
         
-        .monthly-card {
-            background: #f8fafc;
-            border: 1px solid #e2e8f0;
-            border-radius: 0.5rem;
-            padding: 1rem;
-            text-align: center;
+        .control-group {
+            display: flex;
+            flex-direction: column;
+            gap: 0.25rem;
         }
         
-        .monthly-label {
-            font-size: 0.875rem;
-            font-weight: 500;
-            color: #6b7280;
-            margin-bottom: 0.5rem;
-        }
-        
-        .monthly-amount {
-            font-size: 1.5rem;
-            font-weight: 700;
-            color: #1f2937;
-            margin-bottom: 0.25rem;
-        }
-        
-        .monthly-note {
+        .control-label {
             font-size: 0.8125rem;
-            color: #6b7280;
+            font-weight: 500;
+            color: #374151;
         }
         
-        .timeline-section {
-            background: white;
-            border: 1px solid #e2e8f0;
-            border-radius: 0.75rem;
-            margin-bottom: 2rem;
-            overflow: hidden;
-            box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+        .control-select {
+            padding: 0.5rem;
+            border: 1px solid #d1d5db;
+            border-radius: 0.375rem;
+            font-size: 0.875rem;
         }
         
-        .timeline-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 1rem;
+        .timeline-container {
+            max-height: 400px;
+            overflow-y: auto;
             padding: 1.5rem;
+        }
+        
+        .payment-timeline {
+            position: relative;
         }
         
         .timeline-item {
-            background: #f8fafc;
-            border: 1px solid #e2e8f0;
-            border-radius: 0.5rem;
-            padding: 1rem;
-            transition: all 0.2s;
+            position: relative;
+            padding: 1rem 0 1rem 3rem;
+            border-left: 2px solid #e2e8f0;
         }
         
-        .timeline-item:hover {
-            background: #f1f5f9;
-            border-color: #cbd5e1;
+        .timeline-item:last-child {
+            border-left: none;
+        }
+        
+        .timeline-marker {
+            position: absolute;
+            left: -6px;
+            top: 1.5rem;
+            width: 12px;
+            height: 12px;
+            background: #3b82f6;
+            border-radius: 50%;
         }
         
         .timeline-date {
@@ -327,12 +447,19 @@
             margin-bottom: 0.25rem;
         }
         
+        .timeline-amount {
+            font-size: 1.125rem;
+            font-weight: 700;
+            color: #059669;
+            margin-bottom: 0.25rem;
+        }
+        
         .timeline-description {
             font-size: 0.875rem;
             color: #6b7280;
         }
         
-        .cost-comparison {
+        .contingency-section {
             background: white;
             border: 1px solid #e2e8f0;
             border-radius: 0.75rem;
@@ -341,52 +468,120 @@
             box-shadow: 0 1px 3px rgba(0,0,0,0.1);
         }
         
-        .comparison-table {
-            width: 100%;
-            border-collapse: collapse;
-            font-size: 0.875rem;
+        .scenario-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 1rem;
+            padding: 1.5rem;
         }
         
-        .comparison-table th {
-            background: #f8fafc;
-            color: #374151;
-            font-weight: 600;
+        .scenario-card {
+            background: #fef3c7;
+            border: 1px solid #f59e0b;
+            border-radius: 0.5rem;
             padding: 1rem;
-            text-align: left;
-            border-bottom: 1px solid #e2e8f0;
         }
         
-        .comparison-table td {
-            padding: 1rem;
-            border-bottom: 1px solid #f1f5f9;
-        }
-        
-        .comparison-table tr:hover {
-            background: #f8fafc;
-        }
-        
-        .comparison-table .amount {
-            text-align: right;
-            font-variant-numeric: tabular-nums;
+        .scenario-title {
+            font-size: 1rem;
             font-weight: 600;
+            color: #92400e;
+            margin-bottom: 0.5rem;
         }
         
-        .total-row {
-            background: #f1f5f9;
+        .scenario-impact {
+            font-size: 1.125rem;
             font-weight: 700;
+            color: #1f2937;
+            margin-bottom: 0.5rem;
+        }
+        
+        .scenario-description {
+            font-size: 0.875rem;
+            color: #a16207;
+        }
+        
+        .cash-flow-section {
+            background: white;
+            border: 1px solid #e2e8f0;
+            border-radius: 0.75rem;
+            margin-bottom: 2rem;
+            overflow: hidden;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+        }
+        
+        .cash-flow-chart {
+            padding: 1.5rem;
+        }
+        
+        .month-bar {
+            display: flex;
+            align-items: center;
+            margin-bottom: 0.5rem;
+            background: #f8fafc;
+            border-radius: 0.375rem;
+            padding: 0.5rem;
+        }
+        
+        .month-label {
+            width: 100px;
+            font-size: 0.875rem;
+            font-weight: 500;
+            color: #374151;
+        }
+        
+        .month-bar-fill {
+            height: 20px;
+            border-radius: 0.25rem;
+            display: flex;
+            align-items: center;
+            justify-content: flex-end;
+            padding: 0 0.5rem;
+            font-size: 0.8125rem;
+            font-weight: 600;
+            color: white;
+            transition: width 0.3s ease;
         }
         
         .option1-amount { color: #dc2626; }
         .option2-amount { color: #ea580c; }
         .option3-amount { color: #059669; }
         
+        .summary-stats {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1rem;
+            margin-bottom: 2rem;
+        }
+        
+        .stat-card {
+            background: white;
+            border: 1px solid #e2e8f0;
+            border-radius: 0.5rem;
+            padding: 1rem;
+            text-align: center;
+        }
+        
+        .stat-value {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: #1f2937;
+            margin-bottom: 0.25rem;
+        }
+        
+        .stat-label {
+            font-size: 0.875rem;
+            color: #6b7280;
+        }
+        
         @media (max-width: 768px) {
-            .header {
-                padding: 1.5rem 1rem;
+            .header-content {
+                flex-direction: column;
+                gap: 1rem;
             }
             
-            .header h1 {
-                font-size: 1.5rem;
+            .nav-tabs {
+                flex-wrap: wrap;
             }
             
             .main-content {
@@ -401,8 +596,9 @@
                 font-size: 2rem;
             }
             
-            .monthly-grid {
-                grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            .schedule-controls {
+                flex-direction: column;
+                align-items: stretch;
             }
         }
     </style>
@@ -411,295 +607,624 @@
     <div class="dashboard-container">
         <header class="header">
             <div class="header-content">
-                <h1>Hannah's University Education Options</h1>
-                <p>Comprehensive analysis of university pathways and associated costs • September 2025 - 2028</p>
+                <div class="header-info">
+                    <h1>Hannah's University Education Options</h1>
+                    <p>Comprehensive analysis and planning tool • September 2025 - 2028</p>
+                </div>
+                <div class="header-controls">
+                    <div class="nav-tabs">
+                        <div class="nav-tab active" onclick="switchTab('overview')">Overview</div>
+                        <div class="nav-tab" onclick="switchTab('schedule')">Payment Schedule</div>
+                        <div class="nav-tab" onclick="switchTab('decision')">Decision Matrix</div>
+                        <div class="nav-tab" onclick="switchTab('scenarios')">Scenarios</div>
+                    </div>
+                </div>
             </div>
         </header>
         
         <main class="main-content">
-            <div class="student-info">
-                <h2>Student Information</h2>
-                <div class="student-details">
-                    <div class="detail-item">
-                        <div class="detail-label">Student</div>
-                        <div class="detail-value">Hannah Ramzan</div>
-                    </div>
-                    <div class="detail-item">
-                        <div class="detail-label">Course</div>
-                        <div class="detail-value">Politics & International Relations (L257)</div>
-                    </div>
-                    <div class="detail-item">
-                        <div class="detail-label">Primary University</div>
-                        <div class="detail-value">University of Birmingham (B32)</div>
-                    </div>
-                    <div class="detail-item">
-                        <div class="detail-label">Course Duration</div>
-                        <div class="detail-value">3 Years</div>
-                    </div>
-                </div>
-            </div>
-            
-            <div class="options-grid">
-                <div class="option-card" onclick="selectOption(1)">
-                    <div class="option-header">
-                        <div class="option-title">Option 1 - Premium</div>
-                        <div class="option-subtitle">UOB/Aston + Moda Living (1-bedroom)</div>
-                    </div>
-                    <div class="option-content">
-                        <div class="total-cost">
-                            <div class="cost-label">Total Cost</div>
-                            <div class="cost-amount option1-amount">£84,255</div>
-                            <div class="cost-period">3 years complete</div>
+            <!-- Overview Tab -->
+            <div id="overview" class="tab-content active">
+                <div class="student-info">
+                    <h2>Student Information</h2>
+                    <div class="student-details">
+                        <div class="detail-item">
+                            <div class="detail-label">Student</div>
+                            <div class="detail-value">Hannah Ramzan</div>
                         </div>
-                        <div class="cost-breakdown">
-                            <div class="breakdown-item">
-                                <span class="breakdown-label">Tuition (3 years)</span>
-                                <span class="breakdown-amount">£28,605</span>
-                            </div>
-                            <div class="breakdown-item">
-                                <span class="breakdown-label">Accommodation & Living</span>
-                                <span class="breakdown-amount">£54,150</span>
-                            </div>
-                            <div class="breakdown-item">
-                                <span class="breakdown-label">Monthly Maintenance</span>
-                                <span class="breakdown-amount">£1,805/month</span>
-                            </div>
+                        <div class="detail-item">
+                            <div class="detail-label">Course</div>
+                            <div class="detail-value">Politics & International Relations (L257)</div>
                         </div>
-                        <div class="option-pros">
-                            <div class="pros-title">Premium Experience</div>
-                            <div class="pros-list">High-spec private accommodation in central Birmingham • Full independence • Premium student lifestyle • Moda Living brand quality</div>
+                        <div class="detail-item">
+                            <div class="detail-label">Primary University</div>
+                            <div class="detail-value">University of Birmingham (B32)</div>
+                        </div>
+                        <div class="detail-item">
+                            <div class="detail-label">Course Duration</div>
+                            <div class="detail-value">3 Years</div>
                         </div>
                     </div>
                 </div>
                 
-                <div class="option-card" onclick="selectOption(2)">
-                    <div class="option-header">
-                        <div class="option-title">Option 2 - Moderate</div>
-                        <div class="option-subtitle">UOB/Aston + Budget Living</div>
+                <div class="options-grid">
+                    <div class="option-card" onclick="selectOption(1)" id="option-1">
+                        <div class="option-header">
+                            <div class="option-title">Option 1 - Premium</div>
+                            <div class="option-subtitle">UOB/Aston + Moda Living (1-bedroom)</div>
+                        </div>
+                        <div class="option-content">
+                            <div class="total-cost">
+                                <div class="cost-label">Total Cost</div>
+                                <div class="cost-amount option1-amount">£84,255</div>
+                                <div class="cost-period">3 years complete</div>
+                            </div>
+                            <div class="cost-breakdown">
+                                <div class="breakdown-item">
+                                    <span class="breakdown-label">Tuition (3 years)</span>
+                                    <span class="breakdown-amount">£28,605</span>
+                                </div>
+                                <div class="breakdown-item">
+                                    <span class="breakdown-label">Accommodation & Living</span>
+                                    <span class="breakdown-amount">£54,150</span>
+                                </div>
+                                <div class="breakdown-item">
+                                    <span class="breakdown-label">Monthly Maintenance</span>
+                                    <span class="breakdown-amount">£1,805/month</span>
+                                </div>
+                            </div>
+                            <div class="option-pros">
+                                <div class="pros-title">Premium Experience</div>
+                                <div class="pros-list">High-spec private accommodation in central Birmingham • Full independence • Premium student lifestyle • Moda Living brand quality</div>
+                            </div>
+                        </div>
                     </div>
-                    <div class="option-content">
-                        <div class="total-cost">
-                            <div class="cost-label">Total Cost</div>
-                            <div class="cost-amount option2-amount">£64,605</div>
-                            <div class="cost-period">3 years complete</div>
+                    
+                    <div class="option-card" onclick="selectOption(2)" id="option-2">
+                        <div class="option-header">
+                            <div class="option-title">Option 2 - Moderate</div>
+                            <div class="option-subtitle">UOB/Aston + Budget Living</div>
                         </div>
-                        <div class="cost-breakdown">
-                            <div class="breakdown-item">
-                                <span class="breakdown-label">Tuition (3 years)</span>
-                                <span class="breakdown-amount">£28,605</span>
+                        <div class="option-content">
+                            <div class="total-cost">
+                                <div class="cost-label">Total Cost</div>
+                                <div class="cost-amount option2-amount">£64,605</div>
+                                <div class="cost-period">3 years complete</div>
                             </div>
-                            <div class="breakdown-item">
-                                <span class="breakdown-label">Accommodation & Living</span>
-                                <span class="breakdown-amount">£34,500</span>
+                            <div class="cost-breakdown">
+                                <div class="breakdown-item">
+                                    <span class="breakdown-label">Tuition (3 years)</span>
+                                    <span class="breakdown-amount">£28,605</span>
+                                </div>
+                                <div class="breakdown-item">
+                                    <span class="breakdown-label">Accommodation & Living</span>
+                                    <span class="breakdown-amount">£34,500</span>
+                                </div>
+                                <div class="breakdown-item">
+                                    <span class="breakdown-label">Monthly Maintenance</span>
+                                    <span class="breakdown-amount">£1,150/month</span>
+                                </div>
                             </div>
-                            <div class="breakdown-item">
-                                <span class="breakdown-label">Monthly Maintenance</span>
-                                <span class="breakdown-amount">£1,150/month</span>
+                            <div class="option-pros">
+                                <div class="pros-title">Balanced Approach</div>
+                                <div class="pros-list">Same prestigious universities • Shared housing or cheaper halls • Good balance of cost and independence • Part-time work opportunities</div>
                             </div>
                         </div>
-                        <div class="option-pros">
-                            <div class="pros-title">Balanced Approach</div>
-                            <div class="pros-list">Same prestigious universities • Shared housing or cheaper halls • Good balance of cost and independence • Part-time work opportunities</div>
+                    </div>
+                    
+                    <div class="option-card" onclick="selectOption(3)" id="option-3">
+                        <div class="option-header">
+                            <div class="option-title">Option 3 - Economy</div>
+                            <div class="option-subtitle">Manchester Metropolitan + Living at Home</div>
+                        </div>
+                        <div class="option-content">
+                            <div class="total-cost">
+                                <div class="cost-label">Total Cost</div>
+                                <div class="cost-amount option3-amount">£28,605</div>
+                                <div class="cost-period">3 years complete</div>
+                            </div>
+                            <div class="cost-breakdown">
+                                <div class="breakdown-item">
+                                    <span class="breakdown-label">Tuition (3 years)</span>
+                                    <span class="breakdown-amount">£28,605</span>
+                                </div>
+                                <div class="breakdown-item">
+                                    <span class="breakdown-label">Accommodation & Living</span>
+                                    <span class="breakdown-amount">£0</span>
+                                </div>
+                                <div class="breakdown-item">
+                                    <span class="breakdown-label">Monthly Maintenance</span>
+                                    <span class="breakdown-amount">£0/month</span>
+                                </div>
+                            </div>
+                            <div class="option-pros">
+                                <div class="pros-title">Most Economical</div>
+                                <div class="pros-list">Significant cost savings • Family support system • Local university option • Can focus fully on studies without financial pressure</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Payment Schedule Tab -->
+            <div id="schedule" class="tab-content">
+                <div class="payment-schedule">
+                    <div class="section-header">
+                        <h2 class="section-title">Payment Schedule Calculator</h2>
+                    </div>
+                    <div class="schedule-controls">
+                        <div class="control-group">
+                            <label class="control-label">Selected Option</label>
+                            <select class="control-select" id="scheduleOption" onchange="updatePaymentSchedule()">
+                                <option value="1">Option 1 - Premium (£84,255)</option>
+                                <option value="2">Option 2 - Moderate (£64,605)</option>
+                                <option value="3">Option 3 - Economy (£28,605)</option>
+                            </select>
+                        </div>
+                        <div class="control-group">
+                            <label class="control-label">Payment Structure</label>
+                            <select class="control-select" id="paymentStructure" onchange="updatePaymentSchedule()">
+                                <option value="monthly">Monthly Payments</option>
+                                <option value="semester">Semester Payments</option>
+                                <option value="annual">Annual Payments</option>
+                            </select>
+                        </div>
+                        <div class="control-group">
+                            <label class="control-label">Year View</label>
+                            <select class="control-select" id="yearView" onchange="updatePaymentSchedule()">
+                                <option value="all">All 3 Years</option>
+                                <option value="2025-26">Year 1 (2025-26)</option>
+                                <option value="2026-27">Year 2 (2026-27)</option>
+                                <option value="2027-28">Year 3 (2027-28)</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="timeline-container">
+                        <div class="payment-timeline" id="paymentTimeline">
+                            <!-- Payment timeline will be populated by JavaScript -->
                         </div>
                     </div>
                 </div>
                 
-                <div class="option-card" onclick="selectOption(3)">
-                    <div class="option-header">
-                        <div class="option-title">Option 3 - Economy</div>
-                        <div class="option-subtitle">Manchester Metropolitan + Living at Home</div>
+                <div class="summary-stats">
+                    <div class="stat-card">
+                        <div class="stat-value" id="totalCommitment">£84,255</div>
+                        <div class="stat-label">Total Commitment</div>
                     </div>
-                    <div class="option-content">
-                        <div class="total-cost">
-                            <div class="cost-label">Total Cost</div>
-                            <div class="cost-amount option3-amount">£28,605</div>
-                            <div class="cost-period">3 years complete</div>
-                        </div>
-                        <div class="cost-breakdown">
-                            <div class="breakdown-item">
-                                <span class="breakdown-label">Tuition (3 years)</span>
-                                <span class="breakdown-amount">£28,605</span>
-                            </div>
-                            <div class="breakdown-item">
-                                <span class="breakdown-label">Accommodation & Living</span>
-                                <span class="breakdown-amount">£0</span>
-                            </div>
-                            <div class="breakdown-item">
-                                <span class="breakdown-label">Monthly Maintenance</span>
-                                <span class="breakdown-amount">£0/month</span>
-                            </div>
-                        </div>
-                        <div class="option-pros">
-                            <div class="pros-title">Most Economical</div>
-                            <div class="pros-list">Significant cost savings • Family support system • Local university option • Can focus fully on studies without financial pressure</div>
-                        </div>
+                    <div class="stat-card">
+                        <div class="stat-value" id="monthlyAverage">£2,340</div>
+                        <div class="stat-label">Monthly Average</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-value" id="firstPayment">£5,000</div>
+                        <div class="stat-label">First Payment (Est.)</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-value" id="yearlyCommitment">£28,085</div>
+                        <div class="stat-label">Yearly Commitment</div>
                     </div>
                 </div>
             </div>
             
-            <div class="monthly-analysis">
-                <div class="section-header">
-                    <h2 class="section-title">Monthly Cash Flow Analysis</h2>
-                </div>
-                <div class="section-content">
-                    <div class="monthly-grid">
-                        <div class="monthly-card">
-                            <div class="monthly-label">Tuition Payment</div>
-                            <div class="monthly-amount">£953.50</div>
-                            <div class="monthly-note">All options (same across universities)</div>
+            <!-- Decision Matrix Tab -->
+            <div id="decision" class="tab-content">
+                <div class="decision-matrix">
+                    <div class="section-header">
+                        <h2 class="section-title">Decision Support Matrix</h2>
+                        <div class="recommendation" id="matrixRecommendation">
+                            Calculating recommendation...
                         </div>
-                        <div class="monthly-card">
-                            <div class="monthly-label">Option 1 - Total Monthly</div>
-                            <div class="monthly-amount option1-amount">£2,758.50</div>
-                            <div class="monthly-note">Premium accommodation + living</div>
+                    </div>
+                    <div class="section-content">
+                        <div class="criteria-grid">
+                            <div class="criteria-item">
+                                <div class="criteria-label">Financial Impact</div>
+                                <input type="range" min="1" max="10" value="8" class="weight-slider" id="weight-cost" onchange="calculateDecisionMatrix()">
+                                <div class="weight-value">Importance: <span id="weight-cost-val">8</span>/10</div>
+                            </div>
+                            <div class="criteria-item">
+                                <div class="criteria-label">University Prestige</div>
+                                <input type="range" min="1" max="10" value="7" class="weight-slider" id="weight-prestige" onchange="calculateDecisionMatrix()">
+                                <div class="weight-value">Importance: <span id="weight-prestige-val">7</span>/10</div>
+                            </div>
+                            <div class="criteria-item">
+                                <div class="criteria-label">Student Independence</div>
+                                <input type="range" min="1" max="10" value="6" class="weight-slider" id="weight-independence" onchange="calculateDecisionMatrix()">
+                                <div class="weight-value">Importance: <span id="weight-independence-val">6</span>/10</div>
+                            </div>
+                            <div class="criteria-item">
+                                <div class="criteria-label">Accommodation Quality</div>
+                                <input type="range" min="1" max="10" value="5" class="weight-slider" id="weight-accommodation" onchange="calculateDecisionMatrix()">
+                                <div class="weight-value">Importance: <span id="weight-accommodation-val">5</span>/10</div>
+                            </div>
+                            <div class="criteria-item">
+                                <div class="criteria-label">Family Proximity</div>
+                                <input type="range" min="1" max="10" value="4" class="weight-slider" id="weight-proximity" onchange="calculateDecisionMatrix()">
+                                <div class="weight-value">Importance: <span id="weight-proximity-val">4</span>/10</div>
+                            </div>
+                            <div class="criteria-item">
+                                <div class="criteria-label">Future Flexibility</div>
+                                <input type="range" min="1" max="10" value="6" class="weight-slider" id="weight-flexibility" onchange="calculateDecisionMatrix()">
+                                <div class="weight-value">Importance: <span id="weight-flexibility-val">6</span>/10</div>
+                            </div>
                         </div>
-                        <div class="monthly-card">
-                            <div class="monthly-label">Option 2 - Total Monthly</div>
-                            <div class="monthly-amount option2-amount">£2,103.50</div>
-                            <div class="monthly-note">Budget accommodation + living</div>
-                        </div>
-                        <div class="monthly-card">
-                            <div class="monthly-label">Option 3 - Total Monthly</div>
-                            <div class="monthly-amount option3-amount">£953.50</div>
-                            <div class="monthly-note">Tuition only (living at home)</div>
-                        </div>
+                        
+                        <table class="scores-table">
+                            <thead>
+                                <tr>
+                                    <th>Criteria</th>
+                                    <th>Weight</th>
+                                    <th>Option 1 Score</th>
+                                    <th>Option 2 Score</th>
+                                    <th>Option 3 Score</th>
+                                </tr>
+                            </thead>
+                            <tbody id="decisionTableBody">
+                                <!-- Populated by JavaScript -->
+                            </tbody>
+                            <tfoot>
+                                <tr style="background: #f1f5f9; font-weight: 700;">
+                                    <td>TOTAL WEIGHTED SCORE</td>
+                                    <td>-</td>
+                                    <td class="score-cell" id="option1-total">0</td>
+                                    <td class="score-cell" id="option2-total">0</td>
+                                    <td class="score-cell" id="option3-total">0</td>
+                                </tr>
+                            </tfoot>
+                        </table>
                     </div>
                 </div>
             </div>
             
-            <div class="timeline-section">
-                <div class="section-header">
-                    <h2 class="section-title">Critical Timeline & Key Dates</h2>
+            <!-- Scenarios Tab -->
+            <div id="scenarios" class="tab-content">
+                <div class="contingency-section">
+                    <div class="section-header">
+                        <h2 class="section-title">Contingency Planning & "What-If" Scenarios</h2>
+                    </div>
+                    <div class="scenario-grid">
+                        <div class="scenario-card">
+                            <div class="scenario-title">Course Change</div>
+                            <div class="scenario-impact">+£3,000 - £15,000</div>
+                            <div class="scenario-description">If Hannah switches to a different course, costs could vary significantly. Medicine/Engineering may require additional years.</div>
+                        </div>
+                        <div class="scenario-card">
+                            <div class="scenario-title">University Transfer</div>
+                            <div class="scenario-impact">-£20,000 to +£10,000</div>
+                            <div class="scenario-description">Transfer to a different university (e.g., from Birmingham to Manchester) could significantly impact accommodation and living costs.</div>
+                        </div>
+                        <div class="scenario-card">
+                            <div class="scenario-title">Accommodation Change</div>
+                            <div class="scenario-impact">-£8,400 to +£12,000</div>
+                            <div class="scenario-description">Moving from Moda to shared housing saves £700/month. Moving to premium housing increases costs.</div>
+                        </div>
+                        <div class="scenario-card">
+                            <div class="scenario-title">Gap Year</div>
+                            <div class="scenario-impact">Delayed commitment</div>
+                            <div class="scenario-description">If Hannah takes a gap year, payments are delayed by 12 months. Tuition costs may increase due to inflation.</div>
+                        </div>
+                        <div class="scenario-card">
+                            <div class="scenario-title">Part-Time Work</div>
+                            <div class="scenario-impact">-£3,000 to -£8,000</div>
+                            <div class="scenario-description">If Hannah works part-time (10-20 hours/week), she could reduce maintenance requirements by £250-650/month.</div>
+                        </div>
+                        <div class="scenario-card">
+                            <div class="scenario-title">Emergency Fund</div>
+                            <div class="scenario-impact">+10-15% buffer</div>
+                            <div class="scenario-description">Recommended emergency fund: £8,400-12,600 to cover unexpected expenses, medical costs, or opportunity investments.</div>
+                        </div>
+                    </div>
                 </div>
-                <div class="timeline-grid">
-                    <div class="timeline-item">
-                        <div class="timeline-date">14 August 2025</div>
-                        <div class="timeline-title">BTEC Results Released</div>
-                        <div class="timeline-description">Determines university admission eligibility</div>
+                
+                <div class="cash-flow-section">
+                    <div class="section-header">
+                        <h2 class="section-title">Monthly Cash Flow Visualization</h2>
                     </div>
-                    <div class="timeline-item">
-                        <div class="timeline-date">Mid-August 2025</div>
-                        <div class="timeline-title">UCAS Offer Confirmation</div>
-                        <div class="timeline-description">Must confirm university place and accommodation</div>
+                    <div class="cash-flow-chart" id="cashFlowChart">
+                        <!-- Cash flow chart will be populated by JavaScript -->
                     </div>
-                    <div class="timeline-item">
-                        <div class="timeline-date">August 2025</div>
-                        <div class="timeline-title">Deposits Due</div>
-                        <div class="timeline-description">Moda Living rent deposit required immediately after confirmation</div>
-                    </div>
-                    <div class="timeline-item">
-                        <div class="timeline-date">15 Sep 2025</div>
-                        <div class="timeline-title">Aston University Start</div>
-                        <div class="timeline-description">Academic year begins (if Aston chosen)</div>
-                    </div>
-                    <div class="timeline-item">
-                        <div class="timeline-date">29 Sep 2025</div>
-                        <div class="timeline-title">UOB Start Date</div>
-                        <div class="timeline-description">University of Birmingham academic year begins</div>
-                    </div>
-                    <div class="timeline-item">
-                        <div class="timeline-date">30 Sep 2025</div>
-                        <div class="timeline-title">Tuition Payment Due</div>
-                        <div class="timeline-description">First tuition payment or installment setup</div>
-                    </div>
-                </div>
-            </div>
-            
-            <div class="cost-comparison">
-                <div class="section-header">
-                    <h2 class="section-title">Detailed Cost Comparison</h2>
-                </div>
-                <div class="section-content">
-                    <table class="comparison-table">
-                        <thead>
-                            <tr>
-                                <th>Component</th>
-                                <th class="amount">Option 1 - Premium</th>
-                                <th class="amount">Option 2 - Moderate</th>
-                                <th class="amount">Option 3 - Economy</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr>
-                                <td>Monthly Tuition Fee</td>
-                                <td class="amount">£953.50</td>
-                                <td class="amount">£953.50</td>
-                                <td class="amount">£953.50</td>
-                            </tr>
-                            <tr>
-                                <td>Annual Tuition Fee</td>
-                                <td class="amount">£9,535</td>
-                                <td class="amount">£9,535</td>
-                                <td class="amount">£9,535</td>
-                            </tr>
-                            <tr>
-                                <td>Total Tuition (3 years)</td>
-                                <td class="amount">£28,605</td>
-                                <td class="amount">£28,605</td>
-                                <td class="amount">£28,605</td>
-                            </tr>
-                            <tr>
-                                <td>Monthly Maintenance</td>
-                                <td class="amount option1-amount">£1,805</td>
-                                <td class="amount option2-amount">£1,150</td>
-                                <td class="amount option3-amount">£0</td>
-                            </tr>
-                            <tr>
-                                <td>Annual Maintenance</td>
-                                <td class="amount option1-amount">£18,050</td>
-                                <td class="amount option2-amount">£11,500</td>
-                                <td class="amount option3-amount">£0</td>
-                            </tr>
-                            <tr>
-                                <td>Total Maintenance (3 years)</td>
-                                <td class="amount option1-amount">£54,150</td>
-                                <td class="amount option2-amount">£34,500</td>
-                                <td class="amount option3-amount">£0</td>
-                            </tr>
-                            <tr>
-                                <td>University Location</td>
-                                <td class="amount">Birmingham</td>
-                                <td class="amount">Birmingham</td>
-                                <td class="amount">Manchester</td>
-                            </tr>
-                            <tr>
-                                <td>Accommodation Type</td>
-                                <td class="amount">Moda 1-bed</td>
-                                <td class="amount">Budget/Shared</td>
-                                <td class="amount">Family Home</td>
-                            </tr>
-                            <tr class="total-row">
-                                <td><strong>GRAND TOTAL</strong></td>
-                                <td class="amount option1-amount"><strong>£84,255</strong></td>
-                                <td class="amount option2-amount"><strong>£64,605</strong></td>
-                                <td class="amount option3-amount"><strong>£28,605</strong></td>
-                            </tr>
-                        </tbody>
-                    </table>
                 </div>
             </div>
         </main>
     </div>
 
     <script>
+        // Data structures
+        const optionData = {
+            1: { total: 84255, monthly: 2758.50, tuition: 28605, maintenance: 54150, name: "Premium" },
+            2: { total: 64605, monthly: 2103.50, tuition: 28605, maintenance: 34500, name: "Moderate" },
+            3: { total: 28605, monthly: 953.50, tuition: 28605, maintenance: 0, name: "Economy" }
+        };
+        
+        let selectedOption = 1;
+        
+        // Decision matrix criteria and scores
+        const decisionCriteria = {
+            cost: { name: "Financial Impact", option1: 3, option2: 6, option3: 10 },
+            prestige: { name: "University Prestige", option1: 9, option2: 9, option3: 6 },
+            independence: { name: "Student Independence", option1: 10, option2: 8, option3: 3 },
+            accommodation: { name: "Accommodation Quality", option1: 10, option2: 6, option3: 8 },
+            proximity: { name: "Family Proximity", option1: 3, option2: 3, option3: 10 },
+            flexibility: { name: "Future Flexibility", option1: 7, option2: 8, option3: 5 }
+        };
+        
+        // Tab switching
+        function switchTab(tabName) {
+            // Hide all tab contents
+            document.querySelectorAll('.tab-content').forEach(content => {
+                content.classList.remove('active');
+            });
+            
+            // Remove active class from all nav tabs
+            document.querySelectorAll('.nav-tab').forEach(tab => {
+                tab.classList.remove('active');
+            });
+            
+            // Show selected tab content
+            document.getElementById(tabName).classList.add('active');
+            
+            // Add active class to clicked nav tab
+            event.target.classList.add('active');
+            
+            // Initialize tab-specific content
+            if (tabName === 'schedule') {
+                updatePaymentSchedule();
+            } else if (tabName === 'decision') {
+                calculateDecisionMatrix();
+            } else if (tabName === 'scenarios') {
+                updateCashFlowChart();
+            }
+        }
+        
+        // Option selection
         function selectOption(optionNumber) {
-            // Remove selected class from all cards
+            selectedOption = optionNumber;
+            
+            // Update visual selection
             document.querySelectorAll('.option-card').forEach(card => {
                 card.classList.remove('selected');
             });
+            document.getElementById(`option-${optionNumber}`).classList.add('selected');
             
-            // Add selected class to clicked card
-            document.querySelectorAll('.option-card')[optionNumber - 1].classList.add('selected');
-            
-            // You could add more interactivity here, such as:
-            // - Updating additional displays
-            // - Showing option-specific details
-            // - Calculating payment schedules
+            // Update other components
+            updatePaymentSchedule();
+            calculateDecisionMatrix();
         }
         
-        // Auto-select Option 1 on load
+        // Payment schedule calculator
+        function updatePaymentSchedule() {
+            const option = document.getElementById('scheduleOption').value;
+            const structure = document.getElementById('paymentStructure').value;
+            const yearView = document.getElementById('yearView').value;
+            
+            const data = optionData[option];
+            const timeline = document.getElementById('paymentTimeline');
+            timeline.innerHTML = '';
+            
+            // Update summary stats
+            document.getElementById('totalCommitment').textContent = `£${data.total.toLocaleString()}`;
+            document.getElementById('monthlyAverage').textContent = `£${Math.round(data.total / 36).toLocaleString()}`;
+            document.getElementById('yearlyCommitment').textContent = `£${Math.round(data.total / 3).toLocaleString()}`;
+            
+            // Generate payment timeline based on structure
+            generatePaymentTimeline(data, structure, yearView, timeline);
+        }
+        
+        function generatePaymentTimeline(data, structure, yearView, container) {
+            const payments = [];
+            
+            // Generate different payment structures
+            if (structure === 'monthly') {
+                generateMonthlyPayments(data, payments, yearView);
+            } else if (structure === 'semester') {
+                generateSemesterPayments(data, payments, yearView);
+            } else {
+                generateAnnualPayments(data, payments, yearView);
+            }
+            
+            // Render timeline
+            payments.forEach(payment => {
+                const item = document.createElement('div');
+                item.className = 'timeline-item';
+                item.innerHTML = `
+                    <div class="timeline-marker"></div>
+                    <div class="timeline-date">${payment.date}</div>
+                    <div class="timeline-title">${payment.title}</div>
+                    <div class="timeline-amount">£${payment.amount.toLocaleString()}</div>
+                    <div class="timeline-description">${payment.description}</div>
+                `;
+                container.appendChild(item);
+            });
+            
+            // Update first payment estimate
+            if (payments.length > 0) {
+                document.getElementById('firstPayment').textContent = `£${payments[0].amount.toLocaleString()}`;
+            }
+        }
+        
+        function generateMonthlyPayments(data, payments, yearView) {
+            const startDates = [
+                { year: '2025-26', start: new Date(2025, 8, 1) }, // September 2025
+                { year: '2026-27', start: new Date(2026, 8, 1) },
+                { year: '2027-28', start: new Date(2027, 8, 1) }
+            ];
+            
+            startDates.forEach(yearData => {
+                if (yearView !== 'all' && yearView !== yearData.year) return;
+                
+                for (let month = 0; month < 12; month++) {
+                    const date = new Date(yearData.start);
+                    date.setMonth(date.getMonth() + month);
+                    
+                    let amount = data.monthly;
+                    let title = "Monthly Payment";
+                    let description = `Tuition: £953.50`;
+                    
+                    if (data.maintenance > 0) {
+                        const maintenanceMonthly = data.maintenance / 36;
+                        description += `, Maintenance: £${Math.round(maintenanceMonthly)}`;
+                    }
+                    
+                    // Add deposits for first month
+                    if (month === 0) {
+                        amount += 1500; // Accommodation deposit
+                        title = "First Payment + Deposits";
+                        description += ", Accommodation deposit: £1,500";
+                    }
+                    
+                    payments.push({
+                        date: date.toLocaleDateString('en-GB', { month: 'short', year: 'numeric' }),
+                        title: title,
+                        amount: amount,
+                        description: description
+                    });
+                }
+            });
+        }
+        
+        function generateSemesterPayments(data, payments, yearView) {
+            const semesters = [
+                { year: '2025-26', sem1: 'Sep 2025', sem2: 'Jan 2026' },
+                { year: '2026-27', sem1: 'Sep 2026', sem2: 'Jan 2027' },
+                { year: '2027-28', sem1: 'Sep 2027', sem2: 'Jan 2028' }
+            ];
+            
+            semesters.forEach(year => {
+                if (yearView !== 'all' && yearView !== year.year) return;
+                
+                const semesterAmount = (data.total / 3) / 2; // Half of annual amount
+                
+                payments.push({
+                    date: year.sem1,
+                    title: "Semester 1 Payment",
+                    amount: semesterAmount + (year.year === '2025-26' ? 1500 : 0), // Add deposit for first year
+                    description: `Half-yearly payment covering tuition and maintenance`
+                });
+                
+                payments.push({
+                    date: year.sem2,
+                    title: "Semester 2 Payment", 
+                    amount: semesterAmount,
+                    description: `Second semester payment`
+                });
+            });
+        }
+        
+        function generateAnnualPayments(data, payments, yearView) {
+            const years = [
+                { year: '2025-26', date: 'Sep 2025' },
+                { year: '2026-27', date: 'Sep 2026' },
+                { year: '2027-28', date: 'Sep 2027' }
+            ];
+            
+            years.forEach(year => {
+                if (yearView !== 'all' && yearView !== year.year) return;
+                
+                const annualAmount = data.total / 3;
+                
+                payments.push({
+                    date: year.date,
+                    title: `${year.year} Annual Payment`,
+                    amount: annualAmount + (year.year === '2025-26' ? 1500 : 0), // Add deposit for first year
+                    description: `Full year payment: £${(data.tuition/3).toLocaleString()} tuition + £${(data.maintenance/3).toLocaleString()} maintenance`
+                });
+            });
+        }
+        
+        // Decision matrix calculation
+        function calculateDecisionMatrix() {
+            const weights = {
+                cost: document.getElementById('weight-cost').value,
+                prestige: document.getElementById('weight-prestige').value,
+                independence: document.getElementById('weight-independence').value,
+                accommodation: document.getElementById('weight-accommodation').value,
+                proximity: document.getElementById('weight-proximity').value,
+                flexibility: document.getElementById('weight-flexibility').value
+            };
+            
+            // Update weight displays
+            Object.keys(weights).forEach(key => {
+                document.getElementById(`weight-${key}-val`).textContent = weights[key];
+            });
+            
+            // Calculate weighted scores
+            let option1Total = 0, option2Total = 0, option3Total = 0;
+            const tableBody = document.getElementById('decisionTableBody');
+            tableBody.innerHTML = '';
+            
+            Object.keys(decisionCriteria).forEach(key => {
+                const criteria = decisionCriteria[key];
+                const weight = parseInt(weights[key]);
+                
+                const option1Score = criteria.option1 * weight;
+                const option2Score = criteria.option2 * weight;
+                const option3Score = criteria.option3 * weight;
+                
+                option1Total += option1Score;
+                option2Total += option2Score;
+                option3Total += option3Score;
+                
+                const row = document.createElement('tr');
+                row.innerHTML = `
+                    <td>${criteria.name}</td>
+                    <td>${weight}/10</td>
+                    <td class="score-cell">${option1Score}</td>
+                    <td class="score-cell">${option2Score}</td>
+                    <td class="score-cell">${option3Score}</td>
+                `;
+                tableBody.appendChild(row);
+            });
+            
+            // Update totals
+            document.getElementById('option1-total').textContent = option1Total;
+            document.getElementById('option2-total').textContent = option2Total;
+            document.getElementById('option3-total').textContent = option3Total;
+            
+            // Update recommendation
+            const scores = [
+                { option: 1, score: option1Total, name: "Option 1 (Premium)" },
+                { option: 2, score: option2Total, name: "Option 2 (Moderate)" },
+                { option: 3, score: option3Total, name: "Option 3 (Economy)" }
+            ];
+            
+            scores.sort((a, b) => b.score - a.score);
+            document.getElementById('matrixRecommendation').textContent = `Recommended: ${scores[0].name}`;
+        }
+        
+        // Cash flow chart
+        function updateCashFlowChart() {
+            const container = document.getElementById('cashFlowChart');
+            container.innerHTML = '';
+            
+            const months = ['Sep', 'Oct', 'Nov', 'Dec', 'Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug'];
+            const maxAmount = Math.max(...Object.values(optionData).map(d => d.monthly)) + 2000; // Include deposit buffer
+            
+            months.forEach((month, index) => {
+                const monthBar = document.createElement('div');
+                monthBar.className = 'month-bar';
+                
+                // Calculate amounts for each option
+                const option1Amount = optionData[1].monthly + (index === 0 ? 1500 : 0); // Add deposit for first month
+                const option2Amount = optionData[2].monthly + (index === 0 ? 1500 : 0);
+                const option3Amount = optionData[3].monthly + (index === 0 ? 500 : 0); // Smaller deposit for Option 3
+                
+                monthBar.innerHTML = `
+                    <div class="month-label">${month} 25</div>
+                    <div class="month-bar-fill" style="width: ${(option1Amount/maxAmount)*100}%; background-color: #dc2626;">
+                        £${option1Amount.toLocaleString()}
+                    </div>
+                `;
+                
+                container.appendChild(monthBar);
+            });
+        }
+        
+        // Initialize dashboard
         window.addEventListener('load', function() {
             selectOption(1);
+            calculateDecisionMatrix();
+            updatePaymentSchedule();
+            updateCashFlowChart();
         });
     </script>
 </body>
